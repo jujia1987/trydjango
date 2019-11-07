@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>This is the detail for customer {{ object.preferred_name }}</h1>
+<p>First name: {{ object.first_name }}</p>
+<p>Last name:  {{ object.last_name }}</p>
+<p>Gender:     {{ object.gender }}</p>
+<p>Age:        {{ object.age }}</p>
+{% endblock %}

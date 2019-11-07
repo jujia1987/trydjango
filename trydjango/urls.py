@@ -19,7 +19,7 @@ from django.urls import path
 #from pages import views
 from pages.views import home_view, contact_view, about_view
 from products.views import product_detail_view,product_create_view
-
+from customers.views import customer_detail_view,customer_create_view
 #from pages.views import contact_view
 urlpatterns = [
      #path('',views.home_view,name='home'),
@@ -30,4 +30,6 @@ urlpatterns = [
      path('create/',product_create_view),
      path('product/',product_detail_view),
      path('admin/', admin.site.urls),
+     path('customer/',customer_detail_view),
+     path('customercreate/',customer_create_view),
 ]
