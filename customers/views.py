@@ -2,10 +2,11 @@ from django.shortcuts import render
 
 
 from .models import Customer
-from .forms import CustomerForm
+from .forms import CustomerForm,CustomerSearchForm
 # Create your views here.
 def customer_detail_view(request):
-    obj = Customer.objects.get(first_name='Harry')
+    #name = "Harry"
+    obj = Customer.objects.get(first_name = "Harry")
     context = {
         'object':obj
     }
@@ -27,3 +28,21 @@ def customer_create_view(request):
        "form":form
     } 
     return render(request,"customer_create.html",context)
+
+
+
+def customer_search_view(request):
+    search_form = CustomerSearchForm()
+    if request.method == "GET":
+       #search_form = CustomerSearchForm(request.GET)
+       #name = search_form.data
+       name = str(request.GET.get('first_name')).title()
+       print(name)
+       try: 
+           obj = Customer.objects.get(first_name = name)
+       except Customer.DoesNotExist:
+           obj = None
+    context = {
+       "object":obj   #object is used in the HTML template
+    }
+    return render(request,"customer_detail.html",context)

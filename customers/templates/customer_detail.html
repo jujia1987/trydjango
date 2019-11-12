@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<form action = '.' method='GET'>
+First name: <input type = "text" name = "first_name">
+<input type='submit' value='Search'>
+<p>Enter the first name you want to search...</p>
 <h1>This is the detail for customer {{ object.preferred_name }}</h1>
 <p>First name: {{ object.first_name }}</p>
 <p>Last name:  {{ object.last_name }}</p>

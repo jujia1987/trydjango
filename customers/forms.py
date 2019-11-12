@@ -11,3 +11,17 @@ class CustomerForm(forms.ModelForm):
           'gender',
           'age',
           ]
+
+
+
+class CustomerSearchForm(forms.ModelForm):
+     class Meta:
+          model = Customer
+          fields = [
+          'first_name',
+          #'last_name',
+          #'preferred_name',
+          #'gender',
+          #'age',
+          ]
+
