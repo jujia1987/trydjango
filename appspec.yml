@@ -3,6 +3,11 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/Dev/trydjango/src
+permissions:
+  - object: /home/ec2-user/Dev/trydjango
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
 hooks:
   BeforeInstall:
     - location: scripts/clean_instance.sh
