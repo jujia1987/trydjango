@@ -16,10 +16,10 @@ hooks:
       timeout: 30
       runas: root
   ApplicationStart:
-    - location: scripts/start_application.sh
+    - location: scripts/start_application.sh > start.out 2>start.err &
       timeout: 5
       runas: root
   ApplicationStop:
-    - location: scripts/stop_application.sh
+    - location: scripts/stop_application.sh 
       timeout: 30
       runas: root
