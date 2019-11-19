@@ -23,7 +23,8 @@ from customers.views import customer_detail_view,customer_create_view,customer_s
 #from pages.views import contact_view
 urlpatterns = [
      #path('',views.home_view,name='home'),
-     path('',home_view,name='home'),
+     #path('',home_view,name='home'),
+     path('',customer_detail_view),
      path('home/',home_view),
      path('contact/',contact_view),
      path('about/',about_view),
